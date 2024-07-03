@@ -73,7 +73,7 @@ public class taretAim : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(rotasyon.rotation, lookrotation, Time.deltaTime * turnspeed).eulerAngles;
         rotasyon.rotation = Quaternion.Euler(0, rotation.y, 0);
 
-        if (destroySayac == 30)
+        if (destroySayac == 10)
         {
             Destroy(gameObject);
             Instantiate(patlamaEffect, transform.position, transform.rotation);

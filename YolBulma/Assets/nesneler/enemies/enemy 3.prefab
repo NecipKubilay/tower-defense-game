@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 726667431580110374}
   - component: {fileID: 8296377583643713276}
   - component: {fileID: -6423804255439715841}
+  - component: {fileID: 5375556985904938352}
   - component: {fileID: -359651807951240038}
   m_Layer: 0
   m_Name: enemy 3
@@ -354,6 +355,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5375556985904938352}
+        m_TargetAssemblyTypeName: enemyPara, Assembly-CSharp
+        m_MethodName: ParaDondur
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   target: {fileID: 7807564946634223272, guid: 5ef395c56fd48324dbc585cbb94ef6e6, type: 3}
   deathEffect: {fileID: 1460287149220694076, guid: d7d30c4538e402445a484b213c35cc35, type: 3}
   health: 0
@@ -371,6 +384,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killScore: 30
+--- !u!114 &5375556985904938352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263187081460523195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbde6109f46517843a66d4ae0a526088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killGold: 180
 --- !u!195 &-359651807951240038
 NavMeshAgent:
   m_ObjectHideFlags: 0

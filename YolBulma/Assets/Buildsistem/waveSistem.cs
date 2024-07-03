@@ -71,6 +71,7 @@ public class waveSistem : MonoBehaviour
             {
                 //yeni round baslasýn          
                 WaveCompleted();
+                StartCoroutine(UpdateTime());
                 //return;
             }
             else
@@ -103,7 +104,7 @@ public class waveSistem : MonoBehaviour
         state = SpawnState.COUNTÝNG;
 
                 
-        StartCoroutine(UpdateTime());
+        
         waveCountdown = timeBetweenWaves;
 
 
@@ -205,7 +206,9 @@ public class waveSistem : MonoBehaviour
 
             currentTime--;
         }
+
         yield return null;
+        
     }
 
 

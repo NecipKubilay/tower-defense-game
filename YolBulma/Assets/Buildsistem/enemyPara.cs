@@ -6,15 +6,16 @@ public class enemyPara : MonoBehaviour
 {
     [SerializeField] int _killGold;
 
-    private paraKodu _paraKodu;
-
+    //public paraKodu _paraKodu;
+    
     private void Awake()
     {
-        _paraKodu = FindAnyObjectByType<paraKodu>();
+        //_paraKodu = FindAnyObjectByType<paraKodu>();
+        
     }
 
     public void ParaDondur()
     {
-        _paraKodu.AddPara(_killGold);
+        paraKodu.instance.AddPara(_killGold);
     }
 }

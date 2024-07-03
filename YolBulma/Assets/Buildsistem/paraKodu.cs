@@ -14,6 +14,24 @@ public class paraKodu : MonoBehaviour
 
 
 
+    public static paraKodu instance;
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
+
     public void AddPara(int para)
     {
         Para += para;
