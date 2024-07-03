@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2070531232987683208}
   - component: {fileID: 2335753431717523960}
   m_Layer: 0
-  m_Name: fireEffect
+  m_Name: fireEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4835,7 +4835,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d532b0fa87b6ca4d880704b5211bf0b, type: 2}
+  - {fileID: 2100000, guid: 2b941fa809828034e9cb862b2c6f04c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -191,7 +191,7 @@ MonoBehaviour:
   fireRate: 1
   rotasyon: {fileID: 6348534408887889959}
   bulletPrefab: {fileID: 7169095085129545069, guid: ca1f0ae983d67cf4f9ec32b278519f56, type: 3}
-  fireEffect: {fileID: 797533945579835424, guid: d29064b7a7edf764aa664da54c7cdd17, type: 3}
+  fireEffect: {fileID: 797533945579835424, guid: 2c877d3affb1f7e4d88359b579f112da, type: 3}
   firePoint: {fileID: 2057427062018882673}
 --- !u!114 &2100884487251953284
 MonoBehaviour:

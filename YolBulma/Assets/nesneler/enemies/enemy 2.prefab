@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 5809175580170169609}
   - component: {fileID: 726667431580110374}
   - component: {fileID: 8296377583643713276}
+  - component: {fileID: 636845850865730289}
   - component: {fileID: -359651807951240038}
   m_Layer: 0
   m_Name: enemy 2
@@ -324,8 +325,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.7048311
+  m_Center: {x: 0.023819923, y: 0, z: -0.0069293976}
 --- !u!114 &8296377583643713276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,8 +339,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b6d55f0d592834a9bb868889a345c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 636845850865730289}
+        m_TargetAssemblyTypeName: enemyScore, Assembly-CSharp
+        m_MethodName: SkorDondur
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   target: {fileID: 7807564946634223272, guid: 5ef395c56fd48324dbc585cbb94ef6e6, type: 3}
+  deathEffect: {fileID: 1460287149220694076, guid: 83409f91b74e7d94e9b7c95ccc645eba, type: 3}
   health: 0
+  maxhealth: 3
+--- !u!114 &636845850865730289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263187081460523195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6670e3a829ce09a40abb542880563896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killScore: 20
 --- !u!195 &-359651807951240038
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -350,7 +381,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -183,12 +183,26 @@ public class waveSistem : MonoBehaviour
     public Text timerText; // Geri sayým metni nesnesi
     private float currentTime; // Geri sayým süresi (saniye)
     [SerializeField] private float duration;
+
+    float colorValue = 1f;
     public IEnumerator UpdateTime()
     {
-        while (currentTime > 0)
+        colorValue = 1f;
+
+        while (currentTime >= 0)
         {
             timerText.text = currentTime.ToString();
             yield return new WaitForSeconds(1f);
+
+            // Renk deðerini her saniye 0.1 azaltýn
+            colorValue -= 0.1f;
+
+            // Renk deðerini sýnýrlayýn (0 ile 1 arasýnda)
+            colorValue = Mathf.Clamp01(colorValue);
+
+            // TimerText'in rengini ayarlayýn
+            timerText.color = new Color(timerText.color.r, timerText.color.g, timerText.color.b, colorValue);
+
             currentTime--;
         }
         yield return null;

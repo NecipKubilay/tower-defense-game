@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9583dcb771d7c164c923f95bfc0ba501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patlamaEffect: {fileID: 6621380623304983607, guid: bffca27d89f234c4fba3bb5034bedea6, type: 3}
   target: {fileID: 0}
   range: 8
   fireRate: 1

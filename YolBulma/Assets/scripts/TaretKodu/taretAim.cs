@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class taretAim : MonoBehaviour
 {
+    int destroySayac = 0;
+    public GameObject patlamaEffect;
 
     public Transform target;
 
@@ -18,7 +20,7 @@ public class taretAim : MonoBehaviour
 
     string enemyTag = "Enemy";
     public Transform rotasyon;
-    float turnspeed = 20f;
+    float turnspeed = 30f;
 
     public GameObject bulletPrefab;
     public GameObject fireEffect;
@@ -71,7 +73,11 @@ public class taretAim : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(rotasyon.rotation, lookrotation, Time.deltaTime * turnspeed).eulerAngles;
         rotasyon.rotation = Quaternion.Euler(0, rotation.y, 0);
 
-
+        if (destroySayac == 30)
+        {
+            Destroy(gameObject);
+            Instantiate(patlamaEffect, transform.position, transform.rotation);
+        }
 
         if (fireCountDown <= 0f)
         {
@@ -101,7 +107,10 @@ public class taretAim : MonoBehaviour
         {
             bullet.Seek(target);
         }
+        Destroy(bulletgo, 2f);
         //Debug.Log("SHOOT");
+
+        destroySayac++;
     }
 
     

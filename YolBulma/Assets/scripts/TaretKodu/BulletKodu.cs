@@ -10,10 +10,12 @@ public class BulletKodu : MonoBehaviour
 
     public Transform target;
 
-    public float speed = 70f;
-    public float damage;
+    public float lifeTime = 2.0f;
 
-    public GameObject impactEffect;
+    public float speed = 70f;
+    public int damage = 3;
+
+    
 
 
 
@@ -64,12 +66,22 @@ public class BulletKodu : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        lifeTime -= Time.deltaTime;
+
+        if (lifeTime <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
 
+
+
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Destroy(gameObject,1f);
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
@@ -95,13 +107,20 @@ public class BulletKodu : MonoBehaviour
     void hitTarget()
     {
 
-
-        GameObject effect = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effect, 1f);
         Destroy(this.gameObject);
 
     }
 
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.TryGetComponent<enemyKodu>(out enemyKodu enemyComponent))
+    //    {
+    //        enemyComponent.takeDamage(damage);
+
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     //void Start()
     //{

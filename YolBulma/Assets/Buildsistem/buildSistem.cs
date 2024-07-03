@@ -2,9 +2,13 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 public class buildSistem : MonoBehaviour
 {
+
+    public UnityEvent Yerlestirme;
+
     //------------------------------------------
 
 
@@ -129,6 +133,8 @@ public class buildSistem : MonoBehaviour
                     Destroy(pendingObject);
                     pendingObject = null;
                     Tiklandimi = false;
+
+                    Yerlestirme.Invoke();
                     
                 }
 
