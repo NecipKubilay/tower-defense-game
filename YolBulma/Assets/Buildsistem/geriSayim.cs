@@ -13,7 +13,7 @@ public class geriSayim : MonoBehaviour
     public static geriSayim instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        
 
 
         if (instance == null)

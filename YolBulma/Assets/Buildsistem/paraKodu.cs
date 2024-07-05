@@ -17,7 +17,7 @@ public class paraKodu : MonoBehaviour
     public static paraKodu instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        
 
 
         if (instance == null)

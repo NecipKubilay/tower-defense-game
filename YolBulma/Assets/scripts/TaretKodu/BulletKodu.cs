@@ -22,7 +22,7 @@ public class BulletKodu : MonoBehaviour
     public static BulletKodu instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        
 
 
         if (instance == null)

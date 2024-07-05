@@ -8,13 +8,13 @@ public class enemyKodu : MonoBehaviour
 {
     //float speed = 5f;
 
-   
+
     public UnityEvent OnDied;
 
     public GameObject target; // Hedef nesne
     private NavMeshAgent agent; // NavMeshAgent bileþeni
     public GameObject deathEffect;
-    [SerializeField] float health,maxhealth = 3f;
+    [SerializeField] float health, maxhealth = 3f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // NavMeshAgent bileþenini al
@@ -23,12 +23,11 @@ public class enemyKodu : MonoBehaviour
 
     void Update()
     {
-        if (agent.destination != null && target != null)
-        {
-            Vector3 direction = (target.transform.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
-        }
+
+        Vector3 direction = (transform.position - target.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
+
 
 
         if (target != null) // Hedef nesne varsa
@@ -37,7 +36,7 @@ public class enemyKodu : MonoBehaviour
         }
 
 
-        
+
     }
 
     //private void OnCollisionEnter(Collision collision)
@@ -84,12 +83,20 @@ public class enemyKodu : MonoBehaviour
             }
 
 
-            
+
+        }
+
+        if (other.gameObject.tag == "Tower")
+        {
+            GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+
+            Destroy(effect, 1f);
+            Destroy(gameObject);
         }
     }
 
 
-    
+
     void Death()
     {
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);

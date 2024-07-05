@@ -38,7 +38,7 @@ public class waveSistem : MonoBehaviour
     public static waveSistem instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        
 
 
         if (instance == null)
@@ -53,6 +53,9 @@ public class waveSistem : MonoBehaviour
 
     void Start()
     {
+        
+
+
         waveCountdown = timeBetweenWaves;
 
         currentTime = duration;

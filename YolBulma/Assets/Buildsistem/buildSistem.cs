@@ -53,8 +53,8 @@ public class buildSistem : MonoBehaviour
     public static buildSistem instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-
+       
+        
 
         if (instance == null)
         {
@@ -71,6 +71,7 @@ public class buildSistem : MonoBehaviour
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
 
