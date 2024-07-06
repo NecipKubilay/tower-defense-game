@@ -13812,9 +13812,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: PlayOnClick
+      - m_Target: {fileID: 1697604902}
+        m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
+        m_MethodName: DevamEtOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16579,9 +16579,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ExitOnClick
+      - m_Target: {fileID: 1697604902}
+        m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
+        m_MethodName: CikisOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18936,7 +18936,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af0c05ad1288a41aedd7305a9f0c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausepanel: {fileID: 1239384286}
+  pausepanel:
+  - {fileID: 1239384286}
+  - {fileID: 961200617}
 --- !u!4 &1697604903
 Transform:
   m_ObjectHideFlags: 0

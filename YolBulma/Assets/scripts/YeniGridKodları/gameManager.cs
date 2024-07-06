@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -22,7 +23,7 @@ public class gameManager : MonoBehaviour
 
     public GameObject Taretprefab;
     GameObject prefabInstance;*/ 
-    public GameObject pausepanel;
+    public GameObject[] pausepanel;
     private bool panelIsActive;
     
     // Start is called before the first frame update
@@ -90,8 +91,19 @@ public class gameManager : MonoBehaviour
         }
     }*/
 
+    public void DevamEtOnClick()
+    {
+        pausepanel[0].SetActive(false);
+        pausepanel[1].SetActive(true);
+        Time.timeScale = 1f;
+        panelIsActive = false;
+    }
 
-   
+    public void CikisOnClick()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+    }
     
     
     private void Pause()
@@ -101,13 +113,15 @@ public class gameManager : MonoBehaviour
 
             if (!panelIsActive)
             {
-                pausepanel.SetActive(true);
+                pausepanel[0].SetActive(true);
+                pausepanel[1].SetActive(false);
                 Time.timeScale = 0f;
                 panelIsActive = true;
             }
             else
             {
-                pausepanel.SetActive(false);
+                pausepanel[0].SetActive(false);
+                pausepanel[1].SetActive(true);
                 Time.timeScale = 1f;
                 panelIsActive = false;
             }
