@@ -14,6 +14,25 @@ public class scoreKodu : MonoBehaviour
     public int Score {  get; private set; }
     
     public GameObject[] kilitliButonlar;
+
+    public static scoreKodu instance;
+    private void Awake()
+    {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
+
+
+
     public void AddScore(int deger)
     {
         Score += deger;
