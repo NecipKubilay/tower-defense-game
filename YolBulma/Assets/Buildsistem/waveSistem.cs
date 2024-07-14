@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class waveSistem : MonoBehaviour
 {
-
+    [Header("ses----------------")]
+    [SerializeField] AudioSource muzýk;
+    
     public enum SpawnState { SPAWNÝNG, WAÝTÝNG, COUNTÝNG };
 
     
@@ -53,8 +55,8 @@ public class waveSistem : MonoBehaviour
 
     void Start()
     {
-        
 
+        
 
         waveCountdown = timeBetweenWaves;
 
@@ -84,6 +86,10 @@ public class waveSistem : MonoBehaviour
         }
 
 
+        
+        
+
+
 
         if (waveCountdown <= 0)
         {
@@ -104,10 +110,12 @@ public class waveSistem : MonoBehaviour
     {
         Debug.Log("wave bitti");
 
-        state = SpawnState.COUNTÝNG;
+        muzýk.Stop();
 
-                
+        state = SpawnState.COUNTÝNG;
         
+
+
         waveCountdown = timeBetweenWaves;
 
 
@@ -146,11 +154,12 @@ public class waveSistem : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
+        
         Debug.Log("spawning wave" + _wave.name);
 
         state = SpawnState.SPAWNÝNG;
 
-
+        muzýk.Play();
         //spawn
         for (int i = 0; i < _wave.count; i++)
         {

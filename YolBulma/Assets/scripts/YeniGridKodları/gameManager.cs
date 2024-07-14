@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
+    [SerializeField] AudioSource Muzýk;
+
     /*public int gold;
     public Text goldDisplay;
 
@@ -127,5 +129,10 @@ public class gameManager : MonoBehaviour
             }
             
         }
+    }
+
+    void ses()
+    {
+        Muzýk.Play();
     }
 }

@@ -9,6 +9,9 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
 
+    [SerializeField] AudioSource muzýk;
+
+
     [SerializeField] private Image canvasImage;
     [SerializeField] private float fadeSpeed = 1f; // Solma hýzý
     [SerializeField] private Color fadeColor = Color.white; // Solma rengi (beyaz)
@@ -17,7 +20,7 @@ public class MenuScript : MonoBehaviour
     private void Start()
     {
         canvasImage.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 1f);
-       
+        muzýk.Play();
     }
 
     private void Update()
@@ -32,7 +35,7 @@ public class MenuScript : MonoBehaviour
     {
         Application.Quit();
     }
-    
-    
-    
+
+
+
 }

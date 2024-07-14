@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class buildSistem : MonoBehaviour
 {
 
+    [Header("ses----------------")]
+    [SerializeField] AudioSource yerlestirme;
+
+
     public UnityEvent Yerlestirme;
 
     //------------------------------------------
@@ -66,12 +70,12 @@ public class buildSistem : MonoBehaviour
         }
     }
 
-
+     
     // Start is called before the first frame update
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
-        
+            
     }
 
 
@@ -136,7 +140,7 @@ public class buildSistem : MonoBehaviour
                     Tiklandimi = false;
 
                     Yerlestirme.Invoke();
-                    
+                    yerlestirme.Play();
                 }
 
             }

@@ -7,7 +7,9 @@ using UnityEngine.Events;
 public class enemyKodu : MonoBehaviour
 {
     //float speed = 5f;
-
+    [Header("ses----------------")]
+    [SerializeField] AudioSource darbe;
+    [SerializeField] AudioSource hit;
 
     public UnityEvent OnDied;
 
@@ -33,6 +35,13 @@ public class enemyKodu : MonoBehaviour
         if (target != null) // Hedef nesne varsa
         {
             agent.SetDestination(target.transform.position); // Hedef noktayý ayarla
+        }
+
+
+
+        if (kuleKodu.instance.bitisEnemy)
+        {
+            Destroy(this.gameObject);
         }
 
 
@@ -76,7 +85,10 @@ public class enemyKodu : MonoBehaviour
             }
 
 
-
+            if (health > 0)
+            {
+                darbe.Play();
+            }
             if (health <= 0) // Düþman öldüyse
             {
                 Death(); // Yok edilme fonksiyonu çaðrýlýr
@@ -88,8 +100,11 @@ public class enemyKodu : MonoBehaviour
 
         if (other.gameObject.tag == "Tower")
         {
-            GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+            
 
+
+            GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+            
             Destroy(effect, 1f);
             Destroy(gameObject);
         }
@@ -107,6 +122,7 @@ public class enemyKodu : MonoBehaviour
         OnDied.Invoke();
     }
 
+    
     //public void takeDamage(float damage)
     //{
     //    health -= damage;

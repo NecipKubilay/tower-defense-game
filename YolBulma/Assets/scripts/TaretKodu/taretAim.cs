@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class taretAim : MonoBehaviour
 {
+    //----------------------------------------
+    [Header("ses----------------")]
+    [SerializeField] AudioSource kule;
+    [SerializeField] AudioSource patlama;
+    
+
+
+    //----------------------------------------
+
+
     int destroySayac = 0;
     public GameObject patlamaEffect;
 
@@ -63,6 +73,14 @@ public class taretAim : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            patlama.Play();
+        }
+
+
+
         if (target == null)
         {
             return;
@@ -75,8 +93,9 @@ public class taretAim : MonoBehaviour
 
         if (destroySayac == 10)
         {
-            Destroy(gameObject);
-            Instantiate(patlamaEffect, transform.position, transform.rotation);
+
+            StartCoroutine(TARETded());
+            
         }
 
         if (fireCountDown <= 0f)
@@ -97,8 +116,12 @@ public class taretAim : MonoBehaviour
 
     void Shoot()
     {
+
         GameObject effect = (GameObject)Instantiate(fireEffect, firePoint.position, transform.rotation);
-        
+
+
+        kule.Play();
+
         Destroy(effect,1f);
         GameObject bulletgo = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         BulletKodu bullet = bulletgo.GetComponent<BulletKodu>();
@@ -117,7 +140,13 @@ public class taretAim : MonoBehaviour
 
 
 
-
+    IEnumerator TARETded()
+    {
+        patlama.Play();
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
+        Instantiate(patlamaEffect, transform.position, transform.rotation);
+    }
 
 
 

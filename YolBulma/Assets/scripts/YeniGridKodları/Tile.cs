@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 {
 
     Animator anim;
-    public Renderer myRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
